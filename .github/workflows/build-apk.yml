@@ -6,6 +6,9 @@ on:
     tags: ["v*"]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     # 固定 22.04：24.04 移除了 libtinfo5 等 buildozer 依赖的老包
@@ -28,7 +31,7 @@ jobs:
           path: |
             ~/.buildozer
             .buildozer
-          key: buildozer-${{ runner.os }}-v1
+          key: buildozer-${{ runner.os }}-api34-v1
           restore-keys: buildozer-${{ runner.os }}-
 
       - name: 安装系统依赖
@@ -52,16 +55,15 @@ jobs:
           test -f data/rules.json || echo '{"rules":[]}' > data/rules.json
 
       - name: 构建 APK（20～40 分钟）
+        id: apk
         run: |
-          yes | buildozer -v android debug > build.log 2>&1 || {
-            echo "===== 构建失败 · 最后 300 行 ====="
-            tail -n 300 build.log
-            exit 1
-          }
+          set -o pipefail
+          yes | buildozer -v android debug 2>&1 | tee build.log
           echo "===== 构建成功 ====="
           ls -lh bin/
 
       - name: 上传 APK
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: qqbot-apk
@@ -69,11 +71,9 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
-      - name: 失败时上传日志
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-log
-          path: build.log
-          retention-days: 7
-          if-no-files-found: ignore
+      - name: 把构建日志写回 logs 分支
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 ci/report_log.py ${{ steps.apk.outcome == 'success' && 'success' || 'failure' }}
