@@ -1,0 +1,46 @@
+# ============================================================
+#  复制为 config.yaml 后填写（config.yaml 已被 .gitignore 忽略）
+#  cp config.yaml.example config.yaml
+# ============================================================
+
+# ---------- QQ 开放平台凭证（必填）----------
+# 获取：https://q.qq.com → 机器人 → 开发管理 / 开发设置
+appid: "1020xxxxx"        # AppID，纯数字
+secret: "xxxxxxxxxxxx"    # AppSecret，只显示一次，丢了只能重置
+
+# ---------- 监听范围 ----------
+enable_group: true        # 群聊 @机器人（需企业主体 + 群聊权限）
+enable_c2c: true          # 单聊 / 私聊（定向邀请）
+enable_guild: false       # 频道 @消息 + 频道私信（个人主体也能用）
+sandbox: false            # 沙箱环境；注意 2026-01 起沙箱不再支持群聊
+
+# ---------- 规则 ----------
+rules_file: data/rules.json
+
+# ---------- AI 大模型（规则没命中时兜底）----------
+# 留空 ai_api_key 则只走规则回复
+ai_api_key: ""
+# DeepSeek（默认）
+ai_base_url: "https://api.deepseek.com"
+ai_model: "deepseek-chat"
+# 通义：https://dashscope.aliyuncs.com/compatible-mode/v1 ｜ 模型 qwen-plus
+# Kimi：https://api.moonshot.cn/v1 ｜ 模型 moonshot-v1-8k
+# 本地 Ollama：http://127.0.0.1:11434/v1 ｜ 模型 qwen2.5:7b
+
+ai_system_prompt: "你是一个友好、简洁的中文聊天助手，回复控制在 3 句话以内，不要使用 Markdown 标题和表格，纯文本输出。"
+
+ai_history_size: 12       # 每个会话保留最近多少条（含双方）
+ai_history_ttl: 30        # 上下文多久没说话就清空（分钟）
+ai_timeout: 60            # 模型超时（秒）
+ai_max_reply: 1500        # 单条回复最长字符数
+
+# ---------- 被动回复窗口（官方 API 硬限制，一般不要改）----------
+# 群聊：5 分钟内每条消息最多回复 5 次
+group_passive_ttl: 300
+group_passive_max: 5
+# 单聊：60 分钟内每条消息最多回复 4 次
+c2c_passive_ttl: 3600
+c2c_passive_max: 4
+
+dedup_ttl: 600            # 同一消息去重窗口（秒）
+log_level: INFO

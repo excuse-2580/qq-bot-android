@@ -1,0 +1,41 @@
+{
+  "_说明": "保存后自动热重载，无需重启。match: contains(包含)/exact(完全相等)/prefix(开头)/regex(正则)；scope: all/group/c2c/guild；reply 为数组时随机选一条；{nickname} 会替换成发送者的 openid 短标识（官方 API 不返回昵称）。",
+  "rules": [
+    {
+      "keywords": ["你好", "hello", "hi", "在吗", "在么"],
+      "match": "contains",
+      "reply": ["你好呀 {nickname}～有什么可以帮你的吗？", "在的在的，说吧～"],
+      "scope": "all"
+    },
+    {
+      "keywords": ["谢谢", "感谢", "多谢"],
+      "match": "contains",
+      "reply": "不客气，随时找我～",
+      "scope": "all"
+    },
+    {
+      "keywords": ["菜单", "help", "帮助"],
+      "match": "exact",
+      "reply": "可用指令：\n/clear 清空对话上下文\n直接 @我（群里）或私聊我就能聊天",
+      "scope": "all"
+    },
+    {
+      "keywords": ["^早上好|起床"],
+      "match": "regex",
+      "reply": "早上好！今天也要元气满满哦～",
+      "scope": "group"
+    },
+    {
+      "keywords": ["你是谁", "你叫什么"],
+      "match": "contains",
+      "reply": "我是基于 QQ 开放平台官方 API 的聊天机器人，规则回得快，闲聊交给大模型～",
+      "scope": "all"
+    },
+    {
+      "keywords": ["晚安"],
+      "match": "contains",
+      "reply": "晚安，早点休息～",
+      "scope": "c2c"
+    }
+  ]
+}

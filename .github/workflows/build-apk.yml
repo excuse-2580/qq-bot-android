@@ -1,0 +1,68 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main, master]
+    tags: ["v*"]
+  workflow_dispatch:      # 可在 GitHub 页面手动点「Run workflow」触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 配置 JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: 安装系统依赖
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config \
+            zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake \
+            libffi-dev libssl-dev automake make gcc g++ wget curl
+
+      - name: 安装 buildozer / p4a
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install buildozer cython==0.29.33
+
+      - name: 准备默认配置文件
+        run: |
+          mkdir -p data
+          # 打包内置规则文件（App 首次启动会复制到私有目录）
+          test -f data/rules.json || echo '{"rules":[]}' > data/rules.json
+
+      - name: 构建 APK（耗时较长，请耐心等待）
+        run: |
+          yes | buildozer -v android debug 2>&1 | tee build.log || {
+            echo "===== 构建失败，最后 200 行日志 ====="
+            tail -n 200 build.log
+            exit 1
+          }
+
+      - name: 上传 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: qqbot-apk
+          path: bin/*.apk
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: 失败时上传日志
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: |
+            build.log
+            .buildozer/logs/*.log
+          retention-days: 7
+          if-no-files-found: ignore
