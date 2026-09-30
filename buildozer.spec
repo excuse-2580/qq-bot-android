@@ -15,7 +15,8 @@ services = Bot:service.py:foreground
 android.permissions = INTERNET,ACCESS_NETWORK_STATE,WAKE_LOCK,FOREGROUND_SERVICE,RECEIVE_BOOT_COMPLETED
 android.api = 35
 android.minapi = 26
-android.archs = arm64-v8a, armeabi-v7a
+# 只打 arm64：构建时间减半，覆盖绝大多数在用手机
+android.archs = arm64-v8a
 android.allow_backup = True
 android.log_files = bot.log
 
