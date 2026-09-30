@@ -4,11 +4,12 @@ on:
   push:
     branches: [main, master]
     tags: ["v*"]
-  workflow_dispatch:      # 可在 GitHub 页面手动点「Run workflow」触发
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # 固定 22.04：24.04 移除了 libtinfo5 等 buildozer 依赖的老包
+    runs-on: ubuntu-22.04
     timeout-minutes: 300
 
     steps:
@@ -21,32 +22,44 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: 缓存 buildozer 下载（SDK / NDK）
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.buildozer
+            .buildozer
+          key: buildozer-${{ runner.os }}-v1
+          restore-keys: buildozer-${{ runner.os }}-
+
       - name: 安装系统依赖
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
-            git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config \
-            zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake \
-            libffi-dev libssl-dev automake make gcc g++ wget curl
+            git zip unzip python3-pip python3-dev python3-venv \
+            autoconf libtool pkg-config zlib1g-dev \
+            libncurses-dev libffi-dev libssl-dev \
+            automake make gcc g++ wget curl lld
 
-      - name: 安装 buildozer / p4a
+      - name: 安装 buildozer
         run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install buildozer cython==0.29.33
+          python3 -m pip install --upgrade pip setuptools wheel
+          python3 -m pip install --upgrade buildozer
+          buildozer --version
 
-      - name: 准备默认配置文件
+      - name: 准备内置规则文件
         run: |
           mkdir -p data
-          # 打包内置规则文件（App 首次启动会复制到私有目录）
           test -f data/rules.json || echo '{"rules":[]}' > data/rules.json
 
-      - name: 构建 APK（耗时较长，请耐心等待）
+      - name: 构建 APK（20～40 分钟）
         run: |
-          yes | buildozer -v android debug 2>&1 | tee build.log || {
-            echo "===== 构建失败，最后 200 行日志 ====="
-            tail -n 200 build.log
+          yes | buildozer -v android debug > build.log 2>&1 || {
+            echo "===== 构建失败 · 最后 300 行 ====="
+            tail -n 300 build.log
             exit 1
           }
+          echo "===== 构建成功 ====="
+          ls -lh bin/
 
       - name: 上传 APK
         uses: actions/upload-artifact@v4
@@ -61,8 +74,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-log
-          path: |
-            build.log
-            .buildozer/logs/*.log
+          path: build.log
           retention-days: 7
           if-no-files-found: ignore
