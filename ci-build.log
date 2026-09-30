@@ -1,8 +1,8 @@
 # 构建结果：failure
-# 时间：2026-09-30 02:03:08 UTC
-# 运行：36657387885 (第 8 次)
+# 时间：2026-09-30 02:06:22 UTC
+# 运行：36657398552 (第 9 次)
 # 提交：08e78bb2be1aac459ab90a21f73a33eaa484cd52
-# 总行数：27147
+# 总行数：27144
 
 [1m[90m[DEBUG][39m[0m:   	 3185 |                                               is_little, !is_unsigned);
 [1m[90m[DEBUG][39m[0m:   	      |                                                                      ^
@@ -37,7 +37,7 @@
 [1m[90m[DEBUG][39m[0m:   	      |                           ~~~~~~~~~~~~~~~~~~  ^
 [1m[90m[DEBUG][39m[0m:   	3 warnings and 12 errors generated.
 [1m[90m[DEBUG][39m[0m:   	error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-DANDROID', '-I/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/include/python3.14', '-c', 'aiohttp/_websocket.c', '-o', 'build/temp.linux-x86_64-cpython-314/aiohttp/_websocket.o']' returned non-zero exit status 1.
-Exception in thread background thread for pid 55972:
+Exception in thread background thread for pid 56160:
 Traceback (most recent call last):
   File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
     self.run()
@@ -385,11 +385,11 @@ error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/tool
 #     GITHUB_WORKSPACE = '/home/runner/work/qq-bot-android/qq-bot-android'
 #     JAVA_HOME_11_X64 = '/usr/lib/jvm/temurin-11-jdk-amd64'
 #     JAVA_HOME_25_X64 = '/usr/lib/jvm/temurin-25-jdk-amd64'
-#     GITHUB_PATH = '/home/runner/work/_temp/_runner_file_commands/add_path_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_PATH = '/home/runner/work/_temp/_runner_file_commands/add_path_7e44a60b-ba94-4c08-b994-5fa0d9f682a4'
 #     GITHUB_ACTION = 'apk'
 #     JAVA_HOME = '/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64'
-#     GITHUB_RUN_NUMBER = '8'
-#     RUNNER_NAME = 'GitHub Actions 1000001706'
+#     GITHUB_RUN_NUMBER = '9'
+#     RUNNER_NAME = 'GitHub Actions 1000001707'
 #     GRADLE_HOME = '/usr/share/gradle-9.7.1'
 #     GITHUB_REPOSITORY_OWNER_ID = '279957444'
 #     ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE = '/opt/actionarchivecache'
@@ -406,12 +406,12 @@ error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/tool
 #     PWD = '/home/runner/work/qq-bot-android/qq-bot-android'
 #     PIPX_BIN_DIR = '/opt/pipx_bin'
 #     LOGNAME = 'runner'
-#     GITHUB_ARTIFACTS_LIST = '/home/runner/work/_temp/_runner_file_commands/artifacts_list_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_ARTIFACTS_LIST = '/home/runner/work/_temp/_runner_file_commands/artifacts_list_7e44a60b-ba94-4c08-b994-5fa0d9f682a4'
 #     GITHUB_REPOSITORY_ID = '1396786986'
 #     GITHUB_ACTIONS = 'true'
 #     USE_BAZEL_FALLBACK_VERSION = 'silent:'
 #     ANDROID_NDK_LATEST_HOME = '/usr/local/lib/android/sdk/ndk/29.0.14206865'
-#     SYSTEMD_EXEC_PID = '1568'
+#     SYSTEMD_EXEC_PID = '1767'
 #     GITHUB_SHA = '08e78bb2be1aac459ab90a21f73a33eaa484cd52'
 #     GITHUB_WORKFLOW_REF = 'excuse-2580/qq-bot-android/.github/workflows/build-apk.yml@refs/heads/main'
 #     POWERSHELL_DISTRIBUTION_CHANNEL = 'GitHub-Actions-Linux'
@@ -424,20 +424,20 @@ error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/tool
 #     GITHUB_API_URL = 'https://api.github.com'
 #     LANG = 'C.UTF-8'
 #     GOROOT_1_25_X64 = '/opt/hostedtoolcache/go/1.25.14/x64'
-#     RUNNER_TRACKING_ID = 'github_67a688de-e45d-4cbc-81fd-004b7c1e5c45'
+#     RUNNER_TRACKING_ID = 'github_9720e0c7-6b8f-453e-afc5-09c9e2b6f435'
 #     RUNNER_ARCH = 'X64'
 #     RUNNER_TEMP = '/home/runner/work/_temp'
-#     GITHUB_STATE = '/home/runner/work/_temp/_runner_file_commands/save_state_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_STATE = '/home/runner/work/_temp/_runner_file_commands/save_state_7e44a60b-ba94-4c08-b994-5fa0d9f682a4'
 #     EDGEWEBDRIVER = '/usr/local/share/edge_driver'
 #     JAVA_HOME_21_X64 = '/usr/lib/jvm/temurin-21-jdk-amd64'
-#     GITHUB_ENV = '/home/runner/work/_temp/_runner_file_commands/set_env_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_ENV = '/home/runner/work/_temp/_runner_file_commands/set_env_7e44a60b-ba94-4c08-b994-5fa0d9f682a4'
 #     GITHUB_EVENT_PATH = '/home/runner/work/_temp/_github_workflow/event.json'
-#     INVOCATION_ID = '020022e50d58481589584369b68bf3ac'
-#     GITHUB_EVENT_NAME = 'push'
-#     GITHUB_RUN_ID = '36657387885'
+#     INVOCATION_ID = '695f36ee5f09497f8b6d43de85f12791'
+#     GITHUB_EVENT_NAME = 'workflow_dispatch'
+#     GITHUB_RUN_ID = '36657398552'
 #     JAVA_HOME_17_X64 = '/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64'
 #     ANDROID_NDK_HOME = '/usr/local/lib/android/sdk/ndk/27.3.13750724'
-#     GITHUB_STEP_SUMMARY = '/home/runner/work/_temp/_runner_file_commands/step_summary_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_STEP_SUMMARY = '/home/runner/work/_temp/_runner_file_commands/step_summary_7e44a60b-ba94-4c08-b994-5fa0d9f682a4'
 #     HOMEBREW_NO_AUTO_UPDATE = '1'
 #     GITHUB_ACTOR = 'excuse-2580'
 #     NVM_DIR = '/home/runner/.nvm'
@@ -456,11 +456,11 @@ error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/tool
 #     ANDROID_SDK_ROOT = '/usr/local/lib/android/sdk'
 #     VCPKG_INSTALLATION_ROOT = '/usr/local/share/vcpkg'
 #     GITHUB_ACTOR_ID = '279957444'
-#     ACTIONS_ORCHESTRATION_ID = '0b35c075-2506-861c-8126-fd7b2616aa45.build.__default'
+#     ACTIONS_ORCHESTRATION_ID = 'd86a8a1d-7341-4c39-a371-4ef1d723c3fe.build.__default'
 #     RUNNER_TOOL_CACHE = '/opt/hostedtoolcache'
 #     ImageVersion = '20260920.303.1'
 #     DOTNET_NOLOGO = '1'
-#     GITHUB_ARTIFACTS = '/home/runner/work/_temp/_runner_file_commands/artifacts_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_ARTIFACTS = '/home/runner/work/_temp/_runner_file_commands/artifacts_7e44a60b-ba94-4c08-b994-5fa0d9f682a4'
 #     GITHUB_WORKFLOW_SHA = '08e78bb2be1aac459ab90a21f73a33eaa484cd52'
 #     GOROOT_1_24_X64 = '/opt/hostedtoolcache/go/1.24.13/x64'
 #     GITHUB_REF_NAME = 'main'
@@ -472,7 +472,7 @@ error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/tool
 #     ANDROID_NDK_ROOT = '/usr/local/lib/android/sdk/ndk/27.3.13750724'
 #     CHROME_BIN = '/usr/bin/google-chrome'
 #     GITHUB_RETENTION_DAYS = '90'
-#     JOURNAL_STREAM = '8:6060'
+#     JOURNAL_STREAM = '8:12118'
 #     RUNNER_WORKSPACE = '/home/runner/work/qq-bot-android'
 #     LEIN_HOME = '/usr/local/lib/lein'
 #     LEIN_JAR = '/usr/local/lib/lein/self-installs/leiningen-2.12.0-standalone.jar'
@@ -490,7 +490,7 @@ error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/tool
 #     ENABLE_RUNNER_TRACING = 'true'
 #     GITHUB_WORKFLOW = 'Build Android APK'
 #     DEBIAN_FRONTEND = 'noninteractive'
-#     GITHUB_OUTPUT = '/home/runner/work/_temp/_runner_file_commands/set_output_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_OUTPUT = '/home/runner/work/_temp/_runner_file_commands/set_output_7e44a60b-ba94-4c08-b994-5fa0d9f682a4'
 #     AGENT_TOOLSDIRECTORY = '/opt/hostedtoolcache'
 #     _ = '/home/runner/.local/bin/buildozer'
 #     PACKAGES_PATH = '/home/runner/.buildozer/android/packages'
