@@ -1,0 +1,506 @@
+# 构建结果：failure
+# 时间：2026-09-30 02:03:08 UTC
+# 运行：36657387885 (第 8 次)
+# 提交：08e78bb2be1aac459ab90a21f73a33eaa484cd52
+# 总行数：27147
+
+[1m[90m[DEBUG][39m[0m:   	 3185 |                                               is_little, !is_unsigned);
+[1m[90m[DEBUG][39m[0m:   	      |                                                                      ^
+[1m[90m[DEBUG][39m[0m:   	/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/longobject.h:84:17: note: '_PyLong_AsByteArray' declared here
+[1m[90m[DEBUG][39m[0m:   	   84 | PyAPI_FUNC(int) _PyLong_AsByteArray(PyLongObject* v,
+[1m[90m[DEBUG][39m[0m:   	      |                 ^                   ~~~~~~~~~~~~~~~~
+[1m[90m[DEBUG][39m[0m:   	   85 |     unsigned char* bytes, size_t n,
+[1m[90m[DEBUG][39m[0m:   	      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[1m[90m[DEBUG][39m[0m:   	   86 |     int little_endian, int is_signed, int with_exceptions);
+[1m[90m[DEBUG][39m[0m:   	      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[1m[90m[DEBUG][39m[0m:   	aiohttp/_websocket.c:3238:55: error: no member named 'ob_digit' in 'struct _longobject'
+[1m[90m[DEBUG][39m[0m:   	 3238 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+[1m[90m[DEBUG][39m[0m:   	      |                                   ~~~~~~~~~~~~~~~~~~  ^
+[1m[90m[DEBUG][39m[0m:   	aiohttp/_websocket.c:3293:55: error: no member named 'ob_digit' in 'struct _longobject'
+[1m[90m[DEBUG][39m[0m:   	 3293 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+[1m[90m[DEBUG][39m[0m:   	      |                                   ~~~~~~~~~~~~~~~~~~  ^
+[1m[90m[DEBUG][39m[0m:   	aiohttp/_websocket.c:3381:70: error: too few arguments to function call, expected 6, have 5
+[1m[90m[DEBUG][39m[0m:   	 3379 |                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+[1m[90m[DEBUG][39m[0m:   	      |                           ~~~~~~~~~~~~~~~~~~~
+[1m[90m[DEBUG][39m[0m:   	 3380 |                                               bytes, sizeof(val),
+[1m[90m[DEBUG][39m[0m:   	 3381 |                                               is_little, !is_unsigned);
+[1m[90m[DEBUG][39m[0m:   	      |                                                                      ^
+[1m[90m[DEBUG][39m[0m:   	/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/longobject.h:84:17: note: '_PyLong_AsByteArray' declared here
+[1m[90m[DEBUG][39m[0m:   	   84 | PyAPI_FUNC(int) _PyLong_AsByteArray(PyLongObject* v,
+[1m[90m[DEBUG][39m[0m:   	      |                 ^                   ~~~~~~~~~~~~~~~~
+[1m[90m[DEBUG][39m[0m:   	   85 |     unsigned char* bytes, size_t n,
+[1m[90m[DEBUG][39m[0m:   	      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[1m[90m[DEBUG][39m[0m:   	   86 |     int little_endian, int is_signed, int with_exceptions);
+[1m[90m[DEBUG][39m[0m:   	      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[1m[90m[DEBUG][39m[0m:   	aiohttp/_websocket.c:3744:47: error: no member named 'ob_digit' in 'struct _longobject'
+[1m[90m[DEBUG][39m[0m:   	 3744 |     const digit* digits = ((PyLongObject*)b)->ob_digit;
+[1m[90m[DEBUG][39m[0m:   	      |                           ~~~~~~~~~~~~~~~~~~  ^
+[1m[90m[DEBUG][39m[0m:   	3 warnings and 12 errors generated.
+[1m[90m[DEBUG][39m[0m:   	error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-DANDROID', '-I/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/include/python3.14', '-c', 'aiohttp/_websocket.c', '-o', 'build/temp.linux-x86_64-cpython-314/aiohttp/_websocket.o']' returned non-zero exit status 1.
+Exception in thread background thread for pid 55972:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/runner/.local/lib/python3.10/site-packages/sh/__init__.py", line 1709, in wrap
+    fn(*rgs, **kwargs)
+  File "/home/runner/.local/lib/python3.10/site-packages/sh/__init__.py", line 2720, in background_thread
+    handle_exit_code(exit_code)
+  File "/home/runner/.local/lib/python3.10/site-packages/sh/__init__.py", line 2411, in fn
+    return self.command.handle_command_exit_code(exit_code)
+  File "/home/runner/.local/lib/python3.10/site-packages/sh/__init__.py", line 820, in handle_command_exit_code
+    raise exc
+sh.ErrorReturnCode_1: 
+
+  RAN: /home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/bin/python setup.py build_ext -v
+
+  STDOUT:
+*********************
+* Accelerated build *
+*********************
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/lib/python3.14/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: Apache Software License
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  self._finalize_license_expression()
+running build_ext
+building 'aiohttp._websocket' extension
+/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -target aarch64-linux-android26 -fomit-frame-pointer -march=armv8-a -fPIC -target aarch64-linux-android26 -fomit-frame-pointer -march=armv8-a -fPIC -I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14 -DANDROID -I/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14 -fPIC -I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/include/python3.14 -c aiohttp/_websocket.c -o build/temp.linux-x86_64-cpython-314/aiohttp/_websocket.o
+aiohttp/_websocket.c:826:59: warning: 'Py_UNICODE' is deprecated [-Wdeprecated-declarations]
+  826 | static CYTHON_INLINE size_t __Pyx_Py_UNICODE_strlen(const Py_UNICODE *u) {
+      |                                                           ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/unicodeobject.h:10:1: note: 'Py_UNICODE' has been explicitly marked deprecated here
+   10 | Py_DEPRECATED(3.13) typedef wchar_t Py_UNICODE;
+      | ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+  281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+      |                                                      ^
+aiohttp/_websocket.c:827:11: warning: 'Py_UNICODE' is deprecated [-Wdeprecated-declarations]
+  827 |     const Py_UNICODE *u_end = u;
+      |           ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/unicodeobject.h:10:1: note: 'Py_UNICODE' has been explicitly marked deprecated here
+   10 | Py_DEPRECATED(3.13) typedef wchar_t Py_UNICODE;
+      | ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+  281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+      |                                                      ^
+aiohttp/_websocket.c:1475:17: warning: 'Py_OptimizeFlag' is deprecated [-Wdeprecated-declarations]
+ 1475 |   if (unlikely(!Py_OptimizeFlag)) {
+      |                 ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/pydebug.h:13:1: note: 'Py_OptimizeFlag' has been explicitly marked deprecated here
+   13 | Py_DEPRECATED(3.12) PyAPI_DATA(int) Py_OptimizeFlag;
+      | ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+  281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+      |                                                      ^
+aiohttp/_websocket.c:2680:27: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2680 |     return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:2692:36: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2692 |     return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:2696:56: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2696 |     if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                                                 ^
+aiohttp/_websocket.c:936:43: note: expanded from macro 'unlikely'
+  936 |   #define unlikely(x) __builtin_expect(!!(x), 0)
+      |                                           ^
+aiohttp/_websocket.c:2741:9: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2741 |         __PYX_PY_DICT_LOOKUP_IF_MODIFIED(
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2742 |             use_cline, *cython_runtime_dict,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2743 |             __Pyx_PyDict_GetItemStr(*cython_runtime_dict, __pyx_n_s_cline_in_traceback))
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1125:16: note: expanded from macro '__PYX_PY_DICT_LOOKUP_IF_MODIFIED'
+ 1125 |     if (likely(__PYX_GET_DICT_VERSION(DICT) == __pyx_dict_version)) {\
+      |         ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                                                 ^
+aiohttp/_websocket.c:935:43: note: expanded from macro 'likely'
+  935 |   #define likely(x)   __builtin_expect(!!(x), 1)
+      |                                           ^
+aiohttp/_websocket.c:2741:9: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2741 |         __PYX_PY_DICT_LOOKUP_IF_MODIFIED(
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2742 |             use_cline, *cython_runtime_dict,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2743 |             __Pyx_PyDict_GetItemStr(*cython_runtime_dict, __pyx_n_s_cline_in_traceback))
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1129:30: note: expanded from macro '__PYX_PY_DICT_LOOKUP_IF_MODIFIED'
+ 1129 |         __pyx_dict_version = __PYX_GET_DICT_VERSION(DICT);\
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3042:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3042 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3097:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3097 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3185:70: error: too few arguments to function call, expected 6, have 5
+ 3183 |                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+      |                           ~~~~~~~~~~~~~~~~~~~
+ 3184 |                                               bytes, sizeof(val),
+ 3185 |                                               is_little, !is_unsigned);
+      |                                                                      ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/longobject.h:84:17: note: '_PyLong_AsByteArray' declared here
+   84 | PyAPI_FUNC(int) _PyLong_AsByteArray(PyLongObject* v,
+      |                 ^                   ~~~~~~~~~~~~~~~~
+   85 |     unsigned char* bytes, size_t n,
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |     int little_endian, int is_signed, int with_exceptions);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:3238:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3238 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3293:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3293 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3381:70: error: too few arguments to function call, expected 6, have 5
+ 3379 |                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+      |                           ~~~~~~~~~~~~~~~~~~~
+ 3380 |                                               bytes, sizeof(val),
+ 3381 |                                               is_little, !is_unsigned);
+      |                                                                      ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/longobject.h:84:17: note: '_PyLong_AsByteArray' declared here
+   84 | PyAPI_FUNC(int) _PyLong_AsByteArray(PyLongObject* v,
+      |                 ^                   ~~~~~~~~~~~~~~~~
+   85 |     unsigned char* bytes, size_t n,
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |     int little_endian, int is_signed, int with_exceptions);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:3744:47: error: no member named 'ob_digit' in 'struct _longobject'
+ 3744 |     const digit* digits = ((PyLongObject*)b)->ob_digit;
+      |                           ~~~~~~~~~~~~~~~~~~  ^
+3 warnings and 12 errors generated.
+error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-DANDROID', '-I/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/include/python3.14', '-c', 'aiohttp/_websocket.c', '-o', 'build/temp.linux-x86_64-cpython-314/aiohttp/_websocket.o']' returned non-zero exit status 1.
+
+
+  STDERR:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 1290, in <module>
+    main()
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/entrypoints.py", line 18, in main
+    ToolchainCL()
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 721, in __init__
+    getattr(self, command)(args)
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 104, in wrapper_func
+    build_dist_from_args(ctx, dist, args)
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 163, in build_dist_from_args
+    build_recipes(build_order, python_modules, ctx,
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/build.py", line 530, in build_recipes
+    recipe.build_arch(arch)
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1089, in build_arch
+    self.build_compiled_components(arch)
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1100, in build_compiled_components
+    shprint(hostpython, 'setup.py', self.build_cmd, '-v',
+  File "/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/python-for-android/pythonforandroid/logger.py", line 174, in shprint
+    for line in output:
+  File "/home/runner/.local/lib/python3.10/site-packages/sh/__init__.py", line 876, in __next__
+    self.wait()
+  File "/home/runner/.local/lib/python3.10/site-packages/sh/__init__.py", line 793, in wait
+    self.handle_command_exit_code(exit_code)
+  File "/home/runner/.local/lib/python3.10/site-packages/sh/__init__.py", line 820, in handle_command_exit_code
+    raise exc
+sh.ErrorReturnCode_1: 
+
+  RAN: /home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/bin/python setup.py build_ext -v
+
+  STDOUT:
+*********************
+* Accelerated build *
+*********************
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/lib/python3.14/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: Apache Software License
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  self._finalize_license_expression()
+running build_ext
+building 'aiohttp._websocket' extension
+/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -target aarch64-linux-android26 -fomit-frame-pointer -march=armv8-a -fPIC -target aarch64-linux-android26 -fomit-frame-pointer -march=armv8-a -fPIC -I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14 -DANDROID -I/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14 -fPIC -I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/include/python3.14 -c aiohttp/_websocket.c -o build/temp.linux-x86_64-cpython-314/aiohttp/_websocket.o
+aiohttp/_websocket.c:826:59: warning: 'Py_UNICODE' is deprecated [-Wdeprecated-declarations]
+  826 | static CYTHON_INLINE size_t __Pyx_Py_UNICODE_strlen(const Py_UNICODE *u) {
+      |                                                           ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/unicodeobject.h:10:1: note: 'Py_UNICODE' has been explicitly marked deprecated here
+   10 | Py_DEPRECATED(3.13) typedef wchar_t Py_UNICODE;
+      | ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+  281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+      |                                                      ^
+aiohttp/_websocket.c:827:11: warning: 'Py_UNICODE' is deprecated [-Wdeprecated-declarations]
+  827 |     const Py_UNICODE *u_end = u;
+      |           ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/unicodeobject.h:10:1: note: 'Py_UNICODE' has been explicitly marked deprecated here
+   10 | Py_DEPRECATED(3.13) typedef wchar_t Py_UNICODE;
+      | ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+  281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+      |                                                      ^
+aiohttp/_websocket.c:1475:17: warning: 'Py_OptimizeFlag' is deprecated [-Wdeprecated-declarations]
+ 1475 |   if (unlikely(!Py_OptimizeFlag)) {
+      |                 ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/pydebug.h:13:1: note: 'Py_OptimizeFlag' has been explicitly marked deprecated here
+   13 | Py_DEPRECATED(3.12) PyAPI_DATA(int) Py_OptimizeFlag;
+      | ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/pyport.h:281:54: note: expanded from macro 'Py_DEPRECATED'
+  281 | #define Py_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+      |                                                      ^
+aiohttp/_websocket.c:2680:27: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2680 |     return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:2692:36: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2692 |     return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:2696:56: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2696 |     if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                                                 ^
+aiohttp/_websocket.c:936:43: note: expanded from macro 'unlikely'
+  936 |   #define unlikely(x) __builtin_expect(!!(x), 0)
+      |                                           ^
+aiohttp/_websocket.c:2741:9: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2741 |         __PYX_PY_DICT_LOOKUP_IF_MODIFIED(
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2742 |             use_cline, *cython_runtime_dict,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2743 |             __Pyx_PyDict_GetItemStr(*cython_runtime_dict, __pyx_n_s_cline_in_traceback))
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1125:16: note: expanded from macro '__PYX_PY_DICT_LOOKUP_IF_MODIFIED'
+ 1125 |     if (likely(__PYX_GET_DICT_VERSION(DICT) == __pyx_dict_version)) {\
+      |         ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                                                 ^
+aiohttp/_websocket.c:935:43: note: expanded from macro 'likely'
+  935 |   #define likely(x)   __builtin_expect(!!(x), 1)
+      |                                           ^
+aiohttp/_websocket.c:2741:9: error: no member named 'ma_version_tag' in 'PyDictObject'
+ 2741 |         __PYX_PY_DICT_LOOKUP_IF_MODIFIED(
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2742 |             use_cline, *cython_runtime_dict,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2743 |             __Pyx_PyDict_GetItemStr(*cython_runtime_dict, __pyx_n_s_cline_in_traceback))
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1129:30: note: expanded from macro '__PYX_PY_DICT_LOOKUP_IF_MODIFIED'
+ 1129 |         __pyx_dict_version = __PYX_GET_DICT_VERSION(DICT);\
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:1118:65: note: expanded from macro '__PYX_GET_DICT_VERSION'
+ 1118 | #define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+      |                                        ~~~~~~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3042:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3042 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3097:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3097 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3185:70: error: too few arguments to function call, expected 6, have 5
+ 3183 |                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+      |                           ~~~~~~~~~~~~~~~~~~~
+ 3184 |                                               bytes, sizeof(val),
+ 3185 |                                               is_little, !is_unsigned);
+      |                                                                      ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/longobject.h:84:17: note: '_PyLong_AsByteArray' declared here
+   84 | PyAPI_FUNC(int) _PyLong_AsByteArray(PyLongObject* v,
+      |                 ^                   ~~~~~~~~~~~~~~~~
+   85 |     unsigned char* bytes, size_t n,
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |     int little_endian, int is_signed, int with_exceptions);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:3238:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3238 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3293:55: error: no member named 'ob_digit' in 'struct _longobject'
+ 3293 |             const digit* digits = ((PyLongObject*)x)->ob_digit;
+      |                                   ~~~~~~~~~~~~~~~~~~  ^
+aiohttp/_websocket.c:3381:70: error: too few arguments to function call, expected 6, have 5
+ 3379 |                 int ret = _PyLong_AsByteArray((PyLongObject *)v,
+      |                           ~~~~~~~~~~~~~~~~~~~
+ 3380 |                                               bytes, sizeof(val),
+ 3381 |                                               is_little, !is_unsigned);
+      |                                                                      ^
+/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14/cpython/longobject.h:84:17: note: '_PyLong_AsByteArray' declared here
+   84 | PyAPI_FUNC(int) _PyLong_AsByteArray(PyLongObject* v,
+      |                 ^                   ~~~~~~~~~~~~~~~~
+   85 |     unsigned char* bytes, size_t n,
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |     int little_endian, int is_signed, int with_exceptions);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+aiohttp/_websocket.c:3744:47: error: no member named 'ob_digit' in 'struct _longobject'
+ 3744 |     const digit* digits = ((PyLongObject*)b)->ob_digit;
+      |                           ~~~~~~~~~~~~~~~~~~  ^
+3 warnings and 12 errors generated.
+error: Command '['/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-target', 'aarch64-linux-android26', '-fomit-frame-pointer', '-march=armv8-a', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-DANDROID', '-I/home/runner/.buildozer/android/platform/android-ndk-r28c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/python3/arm64-v8a__ndk_target_26/python3/android-build/android-root/include/python3.14', '-fPIC', '-I/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a/build/other_builds/hostpython3/desktop/hostpython3/native-build/root/usr/local/include/python3.14', '-c', 'aiohttp/_websocket.c', '-o', 'build/temp.linux-x86_64-cpython-314/aiohttp/_websocket.o']' returned non-zero exit status 1.
+
+
+  STDERR:
+
+# Command failed: ('/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=qqbot', '--bootstrap=sdl2', '--requirements=python3,kivy,aiohttp,pyyaml,qq-botpy', '--arch=arm64-v8a', '--copy-libs', '--color=always', '--storage-dir=/home/runner/work/qq-bot-android/qq-bot-android/.buildozer/android/platform/build-arm64-v8a', '--ndk-api=26', '--ignore-setup-py', '--debug')
+# Error code: 1
+# ENVIRONMENT:
+#     SHELL = '/bin/bash'
+#     SELENIUM_JAR_PATH = '/usr/share/java/selenium-server.jar'
+#     CONDA = '/usr/share/miniconda'
+#     GITHUB_WORKSPACE = '/home/runner/work/qq-bot-android/qq-bot-android'
+#     JAVA_HOME_11_X64 = '/usr/lib/jvm/temurin-11-jdk-amd64'
+#     JAVA_HOME_25_X64 = '/usr/lib/jvm/temurin-25-jdk-amd64'
+#     GITHUB_PATH = '/home/runner/work/_temp/_runner_file_commands/add_path_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_ACTION = 'apk'
+#     JAVA_HOME = '/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64'
+#     GITHUB_RUN_NUMBER = '8'
+#     RUNNER_NAME = 'GitHub Actions 1000001706'
+#     GRADLE_HOME = '/usr/share/gradle-9.7.1'
+#     GITHUB_REPOSITORY_OWNER_ID = '279957444'
+#     ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE = '/opt/actionarchivecache'
+#     XDG_CONFIG_HOME = '/home/runner/.config'
+#     DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1'
+#     ANT_HOME = '/usr/share/ant'
+#     JAVA_HOME_8_X64 = '/usr/lib/jvm/temurin-8-jdk-amd64'
+#     GITHUB_TRIGGERING_ACTOR = 'excuse-2580'
+#     GITHUB_REF_TYPE = 'branch'
+#     HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS = '3650'
+#     ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED = '1'
+#     ANDROID_NDK = '/usr/local/lib/android/sdk/ndk/27.3.13750724'
+#     BOOTSTRAP_HASKELL_NONINTERACTIVE = '1'
+#     PWD = '/home/runner/work/qq-bot-android/qq-bot-android'
+#     PIPX_BIN_DIR = '/opt/pipx_bin'
+#     LOGNAME = 'runner'
+#     GITHUB_ARTIFACTS_LIST = '/home/runner/work/_temp/_runner_file_commands/artifacts_list_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_REPOSITORY_ID = '1396786986'
+#     GITHUB_ACTIONS = 'true'
+#     USE_BAZEL_FALLBACK_VERSION = 'silent:'
+#     ANDROID_NDK_LATEST_HOME = '/usr/local/lib/android/sdk/ndk/29.0.14206865'
+#     SYSTEMD_EXEC_PID = '1568'
+#     GITHUB_SHA = '08e78bb2be1aac459ab90a21f73a33eaa484cd52'
+#     GITHUB_WORKFLOW_REF = 'excuse-2580/qq-bot-android/.github/workflows/build-apk.yml@refs/heads/main'
+#     POWERSHELL_DISTRIBUTION_CHANNEL = 'GitHub-Actions-Linux'
+#     RUNNER_ENVIRONMENT = 'github-hosted'
+#     DOTNET_MULTILEVEL_LOOKUP = '0'
+#     GITHUB_REF = 'refs/heads/main'
+#     RUNNER_OS = 'Linux'
+#     GITHUB_REF_PROTECTED = 'false'
+#     HOME = '/home/runner'
+#     GITHUB_API_URL = 'https://api.github.com'
+#     LANG = 'C.UTF-8'
+#     GOROOT_1_25_X64 = '/opt/hostedtoolcache/go/1.25.14/x64'
+#     RUNNER_TRACKING_ID = 'github_67a688de-e45d-4cbc-81fd-004b7c1e5c45'
+#     RUNNER_ARCH = 'X64'
+#     RUNNER_TEMP = '/home/runner/work/_temp'
+#     GITHUB_STATE = '/home/runner/work/_temp/_runner_file_commands/save_state_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     EDGEWEBDRIVER = '/usr/local/share/edge_driver'
+#     JAVA_HOME_21_X64 = '/usr/lib/jvm/temurin-21-jdk-amd64'
+#     GITHUB_ENV = '/home/runner/work/_temp/_runner_file_commands/set_env_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_EVENT_PATH = '/home/runner/work/_temp/_github_workflow/event.json'
+#     INVOCATION_ID = '020022e50d58481589584369b68bf3ac'
+#     GITHUB_EVENT_NAME = 'push'
+#     GITHUB_RUN_ID = '36657387885'
+#     JAVA_HOME_17_X64 = '/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64'
+#     ANDROID_NDK_HOME = '/usr/local/lib/android/sdk/ndk/27.3.13750724'
+#     GITHUB_STEP_SUMMARY = '/home/runner/work/_temp/_runner_file_commands/step_summary_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     HOMEBREW_NO_AUTO_UPDATE = '1'
+#     GITHUB_ACTOR = 'excuse-2580'
+#     NVM_DIR = '/home/runner/.nvm'
+#     SGX_AESM_ADDR = '1'
+#     GITHUB_RUN_ATTEMPT = '1'
+#     ANDROID_HOME = '/usr/local/lib/android/sdk'
+#     GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql'
+#     ACCEPT_EULA = 'Y'
+#     USER = 'runner'
+#     PSModulePath = '/root/.local/share/powershell/Modules:/usr/local/share/powershell/Modules:/opt/microsoft/powershell/7/Modules:/usr/share/az_15.6.1'
+#     GITHUB_SERVER_URL = 'https://github.com'
+#     PIPX_HOME = '/opt/pipx'
+#     GECKOWEBDRIVER = '/usr/local/share/gecko_driver'
+#     CHROMEWEBDRIVER = '/usr/local/share/chromedriver-linux64'
+#     SHLVL = '0'
+#     ANDROID_SDK_ROOT = '/usr/local/lib/android/sdk'
+#     VCPKG_INSTALLATION_ROOT = '/usr/local/share/vcpkg'
+#     GITHUB_ACTOR_ID = '279957444'
+#     ACTIONS_ORCHESTRATION_ID = '0b35c075-2506-861c-8126-fd7b2616aa45.build.__default'
+#     RUNNER_TOOL_CACHE = '/opt/hostedtoolcache'
+#     ImageVersion = '20260920.303.1'
+#     DOTNET_NOLOGO = '1'
+#     GITHUB_ARTIFACTS = '/home/runner/work/_temp/_runner_file_commands/artifacts_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     GITHUB_WORKFLOW_SHA = '08e78bb2be1aac459ab90a21f73a33eaa484cd52'
+#     GOROOT_1_24_X64 = '/opt/hostedtoolcache/go/1.24.13/x64'
+#     GITHUB_REF_NAME = 'main'
+#     GITHUB_JOB = 'build'
+#     XDG_RUNTIME_DIR = '/run/user/1001'
+#     AZURE_EXTENSION_DIR = '/opt/az/azcliextensions'
+#     GOROOT_1_26_X64 = '/opt/hostedtoolcache/go/1.26.8/x64'
+#     GITHUB_REPOSITORY = 'excuse-2580/qq-bot-android'
+#     ANDROID_NDK_ROOT = '/usr/local/lib/android/sdk/ndk/27.3.13750724'
+#     CHROME_BIN = '/usr/bin/google-chrome'
+#     GITHUB_RETENTION_DAYS = '90'
+#     JOURNAL_STREAM = '8:6060'
+#     RUNNER_WORKSPACE = '/home/runner/work/qq-bot-android'
+#     LEIN_HOME = '/usr/local/lib/lein'
+#     LEIN_JAR = '/usr/local/lib/lein/self-installs/leiningen-2.12.0-standalone.jar'
+#     GITHUB_ACTION_REPOSITORY = ''
+#     HCA_CLOUD_PROVIDER = 'azure'
+#     PATH = '/home/runner/.buildozer/android/platform/apache-ant-1.9.4/bin:/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+#     GITHUB_BASE_REF = ''
+#     GHCUP_INSTALL_BASE_PREFIX = '/usr/local'
+#     CI = 'true'
+#     SWIFT_PATH = '/usr/share/swift/usr/bin'
+#     ImageOS = 'ubuntu22'
+#     GITHUB_REPOSITORY_OWNER = 'excuse-2580'
+#     GITHUB_HEAD_REF = ''
+#     GITHUB_ACTION_REF = ''
+#     ENABLE_RUNNER_TRACING = 'true'
+#     GITHUB_WORKFLOW = 'Build Android APK'
+#     DEBIAN_FRONTEND = 'noninteractive'
+#     GITHUB_OUTPUT = '/home/runner/work/_temp/_runner_file_commands/set_output_10268dec-82d2-4b91-8c34-e6e6c3707a28'
+#     AGENT_TOOLSDIRECTORY = '/opt/hostedtoolcache'
+#     _ = '/home/runner/.local/bin/buildozer'
+#     PACKAGES_PATH = '/home/runner/.buildozer/android/packages'
+#     ANDROIDSDK = '/home/runner/.buildozer/android/platform/android-sdk'
+#     ANDROIDNDK = '/home/runner/.buildozer/android/platform/android-ndk-r28c'
+#     ANDROIDAPI = '34'
+#     ANDROIDMINAPI = '26'
+# 
+# Buildozer failed to execute the last command
+# The error might be hidden in the log above this error
+# Please read the full log, and search for it before
+# raising an issue with buildozer itself.
+# In case of a bug report, please add a full log with log_level = 2
